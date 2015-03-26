@@ -1,0 +1,6 @@
+{
+  "name": "skillsesh",
+  "dependencies": {
+    "materialize": "~0.95.3"
+  }
+}
