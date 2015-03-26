@@ -1,7 +1,10 @@
+require('dotenv').load();
+
 var gulp = require('gulp'),
     del = require('del'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
+    server = require('gulp-server-livereload'),
     browserify = require('gulp-browserify');
 
 var vendor = "./bower_components/",
@@ -56,4 +59,16 @@ gulp.task('vendor:js', function(){
 
 gulp.task('vendor', ['vendor:js', 'vendor:css', 'vendor:fonts']);
 
-gulp.task('default', ['vendor', 'index', 'build']);
+gulp.task('default', ['index', 'vendor', 'build']);
+
+gulp.task('watch', ['default'], function(){
+    gulp.watch('app/**/*.js', ['build']);
+
+    return gulp.src('app')
+        .pipe( server({
+            livereload: true,
+            host: process.env.IP,
+            port: process.env.PORT,
+        }));
+});
+
