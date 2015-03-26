@@ -64,11 +64,10 @@ gulp.task('default', ['index', 'vendor', 'build']);
 gulp.task('watch', ['default'], function(){
     gulp.watch('app/**/*.js', ['build']);
 
-    return gulp.src('app')
+    return gulp.src('public')
         .pipe( server({
             livereload: true,
             host: process.env.IP,
-            port: process.env.PORT,
+            port: process.env.PORT
         }));
 });
-
