@@ -1,4 +1,4 @@
-var React = require('react'),
+var React = require('react/addons'),
     Navigation = require('./components/navigation'),
     Card = require('./components/card'),
     DefaultRoute = require('react-router').DefaultRoute,

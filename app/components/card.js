@@ -1,4 +1,4 @@
-var React = require('react'),
+var React = require('react/addons'),
     CardImage = require('./card-image'),
     CardContent = require('./card-content'),
     CardAction = require('./card-action');
