@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     server = require('gulp-server-livereload'),
+    plumber = require('gulp-plumber'),
     browserify = require('gulp-browserify');
 
 var vendor = "./bower_components/",
@@ -30,6 +31,7 @@ gulp.task('delete', function(cb){
 
 gulp.task('build', function(){
     return gulp.src('app/app.js')
+        .pipe( plumber() )
         .pipe( browserify({
             insertGlobals: false,
             debug: true,
@@ -65,6 +67,7 @@ gulp.task('watch', ['default'], function(){
     gulp.watch('app/**/*.js', ['build']);
 
     return gulp.src('public')
+        .pipe( plumber() )
         .pipe( server({
             livereload: true,
             host: process.env.IP,
