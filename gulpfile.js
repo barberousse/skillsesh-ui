@@ -34,7 +34,7 @@ gulp.task('build', function(){
         .pipe( plumber() )
         .pipe( browserify({
             insertGlobals: false,
-            debug: true,
+            debug: process.env.NODE_ENV === 'development',
             transform: ['reactify'],
             extensions: ['js', 'jsx']
         }))
