@@ -9,11 +9,9 @@ module.exports = React.createClass({
         },
         render: function(){
             return (
-                <div className="outer-container">
+                <div className="app-container">
                     <Header />
-                    <div className="container">
-                        <RouteHandler />
-                    </div>
+                    <RouteHandler />
                     <Footer />
                 </div>
             );
