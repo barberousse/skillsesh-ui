@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     server = require('gulp-server-livereload'),
+    sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
+    sourcemaps = require('gulp-sourcemaps'),
     browserify = require('gulp-browserify');
 
 var vendor = "./bower_components/",
@@ -30,7 +32,7 @@ gulp.task('delete', function(cb){
 });
 
 gulp.task('build', function(){
-    return gulp.src('app/app.js')
+    return gulp.src('app/app.js', {read: false})
         .pipe( plumber() )
         .pipe( browserify({
             insertGlobals: false,
@@ -61,10 +63,21 @@ gulp.task('vendor:js', function(){
 
 gulp.task('vendor', ['vendor:js', 'vendor:css', 'vendor:fonts']);
 
-gulp.task('default', ['index', 'vendor', 'build']);
+gulp.task('sass', function() {
+    return gulp.src('sass/index.scss')
+        .pipe( plumber() )
+        .pipe( sourcemaps.init() )
+            .pipe( sass() )
+        .pipe( sourcemaps.write() )
+        .pipe( rename('main.css') )
+        .pipe( gulp.dest('public/css'));
+});
+
+gulp.task('default', ['index', 'vendor', 'sass', 'build']);
 
 gulp.task('watch', ['default'], function(){
     gulp.watch('app/**/*.js', ['build']);
+    gulp.watch('sass/**/*.scss', ['sass']);
 
     return gulp.src('public')
         .pipe( plumber() )
