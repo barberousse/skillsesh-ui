@@ -23,18 +23,7 @@ module.exports = React.createClass({
                                     <a href="contact">Contact</a>
                                 </li>
                             </ul>
-                            <ul className="side-nav" id="SideNav">
-                                <li>
-                                    <a href="about">About</a>
-                                </li>
-                                <li>
-                                    <a href="faq">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="contact">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
+=                        </div>
                     </nav>
                 </div>
             );
