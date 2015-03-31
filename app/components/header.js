@@ -23,7 +23,7 @@ module.exports = React.createClass({
                                     <a href="contact">Contact</a>
                                 </li>
                             </ul>
-=                        </div>
+                        </div>
                     </nav>
                 </div>
             );
