@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # skillsesh-ui
 
 ## Prerequisites
@@ -26,10 +25,9 @@ Build a complete public distributable, initiate a live reload server, and watch 
 ### gulp delete
 
 Removes the `/public` directory from the file system
-=======
+
 ## TODO
 
 * ### Create clear distinction between components that render layout and components that render data
 
 * ### Immediately, add a shim component to handle all routes, rendering the transition to the actual handling component when the router calls back
->>>>>>> Update README
