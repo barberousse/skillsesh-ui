@@ -29,7 +29,7 @@ var Store = FluxStore.extend({
 
         // Returns an array of user profiles that match 
         // at least one of the members of skills
-        _results = Data.users.find({ location, skills });
+        _results = Data.profiles({ location, skills });
         this.emitChange();    
     };
 
@@ -38,8 +38,8 @@ module.exports = Store;
 
 ## API
 
-### `Data.profiles.find(location, skills)`
+### `Data.profiles(location, skills)`
 Find profiles matching at least one of the skills in `skills` within a 20 mile radius of `location`. Returns an iterator mapped to objects fit for populating search results.
 
-### `Data.member.find(shortname)`
-Find a specific member by their guid. Returns a user object fit for populating a profile page.
+### `Data.member(shortname)`
+Find a specific member by their `shortname`. Returns a user object fit for populating a profile page.
