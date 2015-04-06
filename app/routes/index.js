@@ -1,13 +1,19 @@
 var React = require('react/addons'),
-    Navigation = require('./components/navigation'),
-    Home = require('./pages/home'),
-    Profile = require('./pages/profile'),
     DefaultRoute = require('react-router').DefaultRoute,
-    Route = require('react-router').Route;
+    Route = require('react-router').Route,
+    Navigation = require('../components/navigation'),
+    Home = require('./home'),
+    Profile = require('./profile');
 
-module.exports = (
+module.exports = {
+    Home,
+    Profile,
+    draw: function() {
+        return (
             <Route name="Home" handler={Navigation} path="/">
                 <Route name="Profile" handler={Profile} path="profile/:shortname" />
                 <DefaultRoute handler={Home} />
             </Route>
         );
+    }
+}
