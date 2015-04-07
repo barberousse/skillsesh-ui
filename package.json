@@ -31,6 +31,7 @@
     "keymirror": "^0.1.1"
   },
   "scripts": {
-    "preinstall": "bower install"
+    "preinstall": "bower install",
+    "console": "node cli.js"
   }
 }
