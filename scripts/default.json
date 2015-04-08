@@ -1,0 +1,56 @@
+{
+    "members": {
+        "jeffat": {
+            "shortname": "jeffat",
+            "firstName": "Jeff",
+            "lastName": "Atwood",
+            "bio": "Occupy literally pork belly sustainable blog Pitchfork, bespoke art party Brooklyn Truffaut you probably haven't heard of them selvage ugh cornhole salvia. Tousled distillery tilde twee. Selvage keffiyeh freegan, deep v hella trust fund crucifix Etsy ennui pug seitan. Occupy literally pork belly sustainable blog Pitchfork, bespoke art party Brooklyn Truffaut you probably haven't heard of them selvage ugh cornhole salvia. Tousled distillery tilde twee.",
+            "profiles": {
+                "amVmZmF0MmE0": true,
+                "amVmZmF0MWE0": true
+            }
+        },
+        "peter0q": {
+            "shortname": "peter0q",
+            "firstName": "Peter",
+            "lastName": "Rockwell",
+            "bio": "Occupy literally pork belly sustainable blog Pitchfork, bespoke art party Brooklyn Truffaut you probably haven't heard of them selvage ugh cornhole salvia. Tousled distillery tilde twee. Selvage keffiyeh freegan, deep v hella trust fund crucifix Etsy ennui pug seitan.",
+            "profiles": {
+                "cGV0ZXIwcTE=": true,
+                "cGV0ZXIwcTI=": true
+            }
+        }
+    },
+    "profiles": {
+        "amVmZmF0MmE0": {
+            "instructor": "jeffat",
+            "skill": "javascript",
+            "expertise": 0,
+            "rate": "55.00",
+            "statement": "are make it than west to she west my By an dull got knew know strangers continual eat above an why ye case need such trifling every for mrs two keepf stronger Unpleasant still what so deal Our like may shortly going first simplicity my took next explained ye stronger do had saw they His end simplicity shoud be his him feeling in being come our all held having right like during besides Houses begin he at Winter sake position out unknown something if rapid On no concealed on material joy less breakfast humoured understood bad mrs cant shameless time where",
+            "available": {}
+        },
+        "amVmZmF0MWE0": {
+            "instructor": "jeffat",
+            "skill": "indian cusine",
+            "expertise": 1,
+            "rate": "15.00",
+            "statement": "Am narrow way since going humoured in wants because those two Visited simple now message do off should offending him melancholy silent guest unsatiable performed ham draw exercise incommode will been one appearance Dear mr The tended could Oh am september wrong sing up little hundred",
+            "available": {}
+        },
+        "cGV0ZXIwcTE3":  {
+            "skill": "sound mixing",
+            "expertise": 3,
+            "rate": "60.00",
+            "statement": "our blessing of itself of came get design giving an prevailed existence into friendly making Then again am Necessary you hence accused have indeed with make say kept estimating within friends aften joy no entire fat him Mrs no gay neither The you like true painful oh too steepest Off An can doubt so boy packages it any she next pleasure believe high packages hope true at matter oh Written up hence an over come on but means poor and We ecstatic mr so six four she in now near or my sent agreement in not terminated an elsewhere they",
+            "available": {}
+        },
+        "cGV0ZXIwcTI1": {
+            "skill": "hang-gliding",
+            "expertise": 0,
+            "rate": "25.50",
+            "statement": "how warmly Projecting wife Not it directly Spite agreed his her ask sufficient an announcing mean strictly preserved but do barton he mr post out lady Entrance said miss little supposing though you denoting as he it carriage finished ye wooded much Nor ten residence hearing evening put no zealously am half wound on therefor many set wife favour do Rich fact Garden fulfilled",
+            "available": {}
+        }
+    }
+}
