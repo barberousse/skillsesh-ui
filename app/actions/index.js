@@ -1,7 +1,7 @@
-var keymirror = require('keymirror');
+var Dispatcher = require('../dispatcher');
 
-module.exports = keymirror({
-    ActionTypes: {
-        READ_BIO: null
+module.exports = {
+    readAbout(obj) {
+        Dispatcher.dispatch({type:'READ_ABOUT', data: obj});
     }
-});
+};
