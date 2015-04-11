@@ -1,0 +1,1 @@
+// Placeholder for an adapter that calls a non-vendor REST API instead of Firebase
