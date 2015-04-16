@@ -16,6 +16,7 @@
     "reactify": "^1.1.0"
   },
   "devDependencies": {
+    "babel-jest": "^5.0.1",
     "casual": "^1.4.7",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
@@ -26,11 +27,30 @@
     "gulp-sass": "^1.3.3",
     "gulp-server-livereload": "^1.2.1",
     "gulp-sourcemaps": "^1.5.1",
+    "jasmine-expect": "^2.0.0-beta1",
     "jest-cli": "^0.4.0",
     "keymirror": "^0.1.1"
   },
   "scripts": {
     "preinstall": "bower install",
-    "console": "node cli.js"
+    "console": "node scripts/cli.js",
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "node_modules/babel-jest",
+    "testDirectoryName": "spec",
+    "testFileExtensions": [
+      "spec.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "setupTestFrameworkScriptFile": "scripts/testConfig.js",
+    "unmockedModulePathPatterns": [
+      "react",
+      "react/addons",
+      "object-assign"
+    ]
   }
 }

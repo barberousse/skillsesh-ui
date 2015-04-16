@@ -5,7 +5,7 @@ var FluxStore = require('flux-store'),
 
 var _loc = _loc || [];
 
-var Store = FluxStore.extend({
+var store = FluxStore.extend({
     dispatcher: Dispatcher,
     onResolve: function(coords) {
         _loc = coords;
@@ -41,4 +41,4 @@ var Store = FluxStore.extend({
     }
 });
 
-module.exports = Store;
+module.exports = store;
