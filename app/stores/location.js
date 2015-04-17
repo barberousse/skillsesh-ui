@@ -8,6 +8,8 @@ var _loc = _loc || [];
 var store = FluxStore.extend({
     dispatcher: Dispatcher,
     onResolve: function(coords) {
+        if ( !Array.isArray(coords) ) return;
+        
         _loc = coords;
         this.emitChange();
     },
@@ -33,8 +35,7 @@ var store = FluxStore.extend({
             return;
         }
         
-        _loc = action.data;
-        this.emitChange();
+        this.onResolve(action.data);
     },
     read: function(){
         return _loc;

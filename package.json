@@ -38,19 +38,15 @@
   },
   "jest": {
     "scriptPreprocessor": "node_modules/babel-jest",
-    "testDirectoryName": "spec",
-    "testFileExtensions": [
-      "spec.js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
+    "setupEnvScriptFile": "scripts/testEnv.js",
     "setupTestFrameworkScriptFile": "scripts/testConfig.js",
+    "testDirectoryName": "__spec__",
+    "testPathDirs": [ "app" ],
     "unmockedModulePathPatterns": [
       "react",
       "react/addons",
-      "object-assign"
+      "object-assign",
+      "babel"
     ]
   }
 }
