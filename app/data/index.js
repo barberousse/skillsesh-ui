@@ -1,4 +1,4 @@
-var { Root, Geofire, Members, Profiles } = require('./firebase');
+var { Members, Profiles } = require('./adapters/firebase');
 
 const NOTFOUND = Object.create(Error.prototype, { 
     name: { value: 'NotFoundError' }, 
@@ -14,8 +14,6 @@ const NOTFOUND = Object.create(Error.prototype, {
 });
 
 module.exports = {
-    Root,
-    Geofire,
     members: {
         find: function({ shortname }) {
             if ( Object.is(shortname, undefined) ) throw WRONGARGUMENT;
@@ -23,7 +21,7 @@ module.exports = {
             
             return new Promise( function(resolve, reject) {
                 Members.child(shortname).once('value', function(node) {
-                    if ( !node.exists() ) reject( (throw NOTFOUND) );
+                    if ( !node.exists() ) reject(NOTFOUND);
                     resolve(node.val());
                 });
             } );

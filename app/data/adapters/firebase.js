@@ -5,8 +5,6 @@ var Firebase = require('firebase'),
     Profiles = Root.child('profiles');
 
 module.exports = {
-    Root,
     Members,
     Profiles,
-    Geofire
 };
