@@ -31,7 +31,8 @@
     "gulp-sourcemaps": "^1.5.1",
     "jasmine-expect": "^2.0.0-beta1",
     "jest-cli": "^0.4.0",
-    "keymirror": "^0.1.1"
+    "keymirror": "^0.1.1",
+    "xmlhttprequest": "^1.7.0"
   },
   "scripts": {
     "preinstall": "bower install",

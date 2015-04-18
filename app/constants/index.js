@@ -1,7 +1,8 @@
 var mirror = require('keymirror');
 
 module.exports = { 
-	ActionTypes: mirror({
-		SET_LOCATION: null
+	actionTypes: mirror({
+		SET_LOCATION: null,
+        SET_PROXY_LOCATION: null
 	})
 }

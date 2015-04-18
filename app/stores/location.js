@@ -1,7 +1,7 @@
 var FluxStore = require('flux-store'),
     Dispatcher = require('../dispatcher'),
     request = require('browser-request'),
-    {ActionTypes} = require('../constants');
+    {actionTypes} = require('../constants');
 
 var _loc = _loc || [];
 
@@ -29,7 +29,7 @@ var store = FluxStore.extend({
         _promise.then(this.onResolve);
     },
     onDispatcherAction: function(action) {
-        if (action.type !== ActionTypes.SET_LOCATION) return;
+        if (action.type !== actionTypes.SET_LOCATION) return;
         if (!action.data) {
             this.handleDefault();
             return;
@@ -37,7 +37,7 @@ var store = FluxStore.extend({
         
         this.onResolve(action.data);
     },
-    read: function(){
+    getLocation: function(){
         return _loc;
     }
 });
