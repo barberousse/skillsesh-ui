@@ -28,7 +28,9 @@ var store = FluxStore.extend({
         
         _promise.then(this.onResolve);
     },
-    onDispatcherAction: function(action) {
+    onDispatcherAction: function(payload) {
+        var action = payload.action;
+        
         if (action.type !== actionTypes.SET_LOCATION) return;
         if (!action.data) {
             this.handleDefault();

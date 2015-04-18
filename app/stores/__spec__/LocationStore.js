@@ -16,13 +16,13 @@ describe("LocationStore", function(){
     
     it("sets state from browser", function(){
         var coords = [0, 1];
-        store.onDispatcherAction({type: actionTypes.SET_LOCATION, data: coords});
+        store.onDispatcherAction({ action: {type: actionTypes.SET_LOCATION, data: coords} });
 
         expect( store.getLocation() ).toEqual(coords);
     });
 
     it("sets state from IP geolocation", function(){
-        store.onDispatcherAction({type: actionTypes.SET_LOCATION});
+        store.onDispatcherAction({ action: {type: actionTypes.SET_LOCATION} });
 
         expect( store.getLocation() ).toBeArrayOfNumbers();
     });
