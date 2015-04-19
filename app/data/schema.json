@@ -1,0 +1,28 @@
+{
+    "members": {
+        "guid": {
+            "shortname": "",
+            "firstName": "",
+            "lastName": "",
+            "avatar": "",
+            "email": "",
+            "zipcode": "",
+            "bio": "",
+            "profiles": {
+                "profile": true,
+                "profile": true,
+            }
+        }
+    },
+    "profiles": {
+        "guid": {
+            "member": "member"
+            "skill": "",
+            "rate": 10.00,
+            "statement": ""
+        }
+    },
+    "locations": {
+        "profile": []
+    }
+}
