@@ -1,5 +1,9 @@
-var LocationStore = require('./location');
+var LocationStore = require('./location'),
+    ProfileStore = require('./profile'),
+    UserStore = require('./user');
     
 module.exports = {
-    LocationStore
+    UserStore
+    ProfileStore,
+    LocationStore,
 };
