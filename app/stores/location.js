@@ -1,12 +1,13 @@
-var FluxStore = require('flux-store'),
-    Dispatcher = require('../dispatcher'),
+var fluxStore = require('flux-store'),
+    dispatcher = require('../dispatcher'),
     request = require('browser-request'),
-    {actionTypes} = require('../constants');
+    {actionTypes} = require('../constants'),
+    {UPDATE_LOCATION} = actionTypes;
 
 var _loc = _loc || [];
 
-var store = FluxStore.extend({
-    dispatcher: Dispatcher,
+var store = fluxStore.extend({
+    dispatcher,
     onResolve: function(coords) {
         if ( !Array.isArray(coords) ) return;
         
@@ -30,14 +31,14 @@ var store = FluxStore.extend({
     },
     onDispatcherAction: function(payload) {
         var action = payload.action;
-        
-        if (action.type !== actionTypes.SET_LOCATION) return;
-        if (!action.data) {
-            this.handleDefault();
-            return;
+
+        switch (action.type){
+            case UPDATE_LOCATION:
+                action.data ? this.onResolve(action.data) : this.handleDefault();
+                break;
         }
         
-        this.onResolve(action.data);
+        return true;
     },
     getLocation: function(){
         return _loc;

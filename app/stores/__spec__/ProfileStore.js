@@ -5,29 +5,36 @@ jest.dontMock('../../constants');
 
 describe('ProfileStore', function(){
     var store = require('../profile'),
-        geo = require('../../data/geofire'),
-        {SET_PROFILE, GET_PROFILE} = require('../../constants').actionTypes;
+        fb = require('../../data/firenext'),
+        {CREATE_PROFILE, GET_PROFILE} = require('../../constants').actionTypes;
 
 
     describe('GET_PROFILE', function() {
+        var fakeJson = {foo: 'bar'};    
 
         beforeEach(() => {
-            geo.__setJson( {foo: 'bar'} );
+            fb.__setJson( fakeJson );
             store.onDispatcherAction({ action: {type: GET_PROFILE, data: "123456789"} });
         });
 
         afterEach(() => {
-            geo.__setJson(null);
+            fb.__setJson(null);
         });
 
         it("retrieves the requested profile by guid", function(){
-            expect( store.getProfile() ).toEqual( {foo: 'bar'} );
+            expect( store.getProfile() ).toEqual( fakeJson );
         });
     });
 
-    xdescribe('SET_PROFILE', function() {
+    describe('CREATE_PROFILE', function() {
+        var fakeData = { foo: 'bar' };
+
         beforeEach(() => {
-            //store.onDispatcherAction({ action: {type: SET_PROFILE, data: ''} });
+            store.onDispatcherAction({ action: {type: CREATE_PROFILE, data: fakeData} });
+        });
+
+        it("creates a new profile", function(){
+            expect( store.getProfile() ).toEqual( fakeData );
         });
     });
 });

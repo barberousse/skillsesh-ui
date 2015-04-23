@@ -1,10 +1,16 @@
 var fluxStore = require('flux-store'),
     dispatcher = require('../dispatcher'),
+    actionTypes = require('../constants').actionTypes,
     userStore = require('./user'),
     fb = require('../data/firenext'),
     locations = require('../data/geofire'),
-    uuid = require('uuid'),
-    {SET_PROFILE, GET_PROFILE, QUERY_PROFILES} = require('../constants').actionTypes;
+    uuid = require('uuid');
+
+var {   GET_PROFILE,
+        CREATE_PROFILE,
+        UPDATE_PROFILE,
+        REMOVE_PROFILE
+    } = actionTypes;
 
 var _profile = _profile || null;
 
@@ -12,14 +18,21 @@ var _profile = _profile || null;
 var store = fluxStore.extend({ 
     dispatcher, 
     onDispatcherAction(payload){
-        var action = payload.action;
+        var action = payload.action,
+            profiles = fb.child('profiles');
 
         switch (action.type) {
-            case SET_PROFILE:
-                break;
+            case CREATE_PROFILE:
+                profiles
+                    .child( uuid.v4() )
+                    .set( action.data )
+                    .then( this.setResult );
+                break;  
             case GET_PROFILE:
-                console.log(action.data);
-                locations.child(action.data).once('value', this.setResult, this);
+                profiles
+                    .child(action.data)
+                    .once('value', this.setResult, this); // Will this really be available for waitFor? 
+                break;
             default:
                 break;
         }

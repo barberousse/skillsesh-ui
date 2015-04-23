@@ -15,7 +15,7 @@ describe("LocationStore", function(){
     
     it("sets state from browser", function(){
         var coords = [0, 1];
-        store.onDispatcherAction({ action: {type: actionTypes.SET_LOCATION, data: coords} });
+        store.onDispatcherAction({ action: {type: actionTypes.UPDATE_LOCATION, data: coords} });
 
         expect( store.getLocation() ).toEqual(coords);
     });
