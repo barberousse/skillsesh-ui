@@ -1,7 +1,6 @@
 var fluxStore = require('flux-store'),
     dispatcher = require('../dispatcher'),
     actionTypes = require('../constants').actionTypes,
-    userStore = require('./user'),
     fb = require('../data/firenext'),
     locations = require('../data/geofire'),
     uuid = require('uuid');
