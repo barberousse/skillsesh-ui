@@ -39,6 +39,7 @@
   "scripts": {
     "preinstall": "bower install",
     "console": "node scripts/cli.js",
+    "seed": "node scripts/seed.js",
     "test": "jest"
   },
   "jest": {
