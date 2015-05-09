@@ -82,7 +82,7 @@ gulp.task('watch', ['default'], function(){
     return gulp.src('public')
         .pipe( plumber() )
         .pipe( server({
-            livereload: true,
+            livereload: false,
             host: process.env.IP,
             port: process.env.PORT
         }));
