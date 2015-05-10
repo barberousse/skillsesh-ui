@@ -1,9 +1,9 @@
 var React = require('react/addons'),
     DefaultRoute = require('react-router').DefaultRoute,
     Route = require('react-router').Route,
-    Navigation = require('../components/navigation'),
-    Home = require('./home'),
-    Profile = require('./profile');
+    Navigation = require('../components/navigation.jsx'),
+    Home = require('./home.jsx'),
+    Profile = require('./profile.jsx');
 
 module.exports = {
     Home,
